@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">PopMov</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="most_popular">Most Popular</string>
+    <string name="settings_favourites">Favorites</string>
+    <string name="api_key">b9c396b11187cafde092bd288f0909c1</string>
+    <string name="movie_image">Movie’s Image</string>
+    <string name="rating_star">Rate</string>
+    <string name="release_icon">release</string>
+    <string name="overview">OverView</string>
+    <string name="error_message_no_connection">No Connection</string>
+    <string name="error_message">Error</string>
+    <string name="refresh">refresh</string>
+    <string name="synopsis">Synopsis</string>
+    <string name="release_date">Release Date</string>
+    <string name="_8_6">8.6</string>
+    <string name="date">Date</string>
+</resources>
