@@ -16,24 +16,24 @@ class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder>
     private Movie[] moviesData;
     public static final String BASE_URL_IMAGE = "http://image.tmdb.org/t/p/w342";
 
-    private final MoviesAdapterOnClickHandler moviesAdapterOnClickHandler;
+    private final ListItemOnClickHandler listItemOnClickHandler;
 
-    public interface MoviesAdapterOnClickHandler {
+    public interface ListItemOnClickHandler {
         void onItemClickListener(int id, String title, String imageUrl, String synopsis, double rating, String releaseDate);
     }
 
-    public MoviesAdapter(MoviesAdapterOnClickHandler clickHandler,Context context) {
-        moviesAdapterOnClickHandler = clickHandler;
+    public MoviesAdapter(ListItemOnClickHandler clickHandler,Context context) {
+        listItemOnClickHandler = clickHandler;
         this.context=context;
     }
 
     public class MoviesViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        public final ImageView imageView;
+        private ImageView imageView;
 
         public MoviesViewHolder(View itemView) {
             super(itemView);
-            imageView = itemView.findViewById(R.id.image_view_movie);
+            imageView = (ImageView)itemView.findViewById(R.id.image_view_movie);
             itemView.setOnClickListener(this);
         }
 
@@ -48,7 +48,7 @@ class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder>
             double rating = moviesData[adapterPosition].getRating();
             String releaseDate = moviesData[adapterPosition].getReleaseDate();
 
-            moviesAdapterOnClickHandler.onItemClickListener(id, title, imageUrl, synopsis, rating, releaseDate);
+            listItemOnClickHandler.onItemClickListener(id, title, imageUrl, synopsis, rating, releaseDate);
         }
     }
 
@@ -72,7 +72,7 @@ class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder>
 
     @Override
     public int getItemCount() {
-        if (null == moviesData) {
+        if (moviesData == null ) {
             return 0;
         } else {
             return moviesData.length;

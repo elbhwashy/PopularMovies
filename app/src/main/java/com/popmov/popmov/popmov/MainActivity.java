@@ -27,7 +27,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class MainActivity extends AppCompatActivity implements MoviesAdapter.MoviesAdapterOnClickHandler {
+public class MainActivity extends AppCompatActivity implements MoviesAdapter.ListItemOnClickHandler {
 
     private static final String API_KEY = "b9c396b11187cafde092bd288f0909c1";
     private MoviesAdapter movieAdapter;
