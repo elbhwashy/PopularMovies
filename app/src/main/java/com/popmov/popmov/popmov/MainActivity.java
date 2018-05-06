@@ -29,7 +29,7 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity implements MoviesAdapter.MoviesAdapterOnClickHandler {
 
-    private static final String API_KEY = "b9c396b11187cafde092bd288f0909c1";
+    private static final String API_KEY = "your key";
     private MoviesAdapter movieAdapter;
     private RecyclerView recyclerView;
     private String defaultSortType = "Most Popular";
